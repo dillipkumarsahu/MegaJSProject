@@ -1,0 +1,163 @@
+#app-name{
+		font-family:"Ubuntu",sans-serif;
+		font-size:35px;
+		position: relative;
+		top: -130px;
+	}
+
+	#tag-line{
+		font-size:20px;
+		text-align:center;
+		font-family:cursive;
+		margin-top:-20px;
+		position: relative;
+		top: -130px;
+	}
+		#company-option{
+		width:35%;
+		padding:20px;
+		margin:-150px 30%;
+		position: relative;
+	}
+
+
+
+	#company-icon{
+		float:left;
+		font-size:80px;
+		border:2px solid #41a2fc;
+		background:#41a2fc;
+		color:white;
+		width:90px;
+		height: 80px;
+		text-align: center
+	}
+
+	#create{
+		width:330px;
+		height:84px;
+		background: inherit;
+		border:2px solid #41a2fc;
+		font-family: Ubuntu;
+		font-size: 40px;
+		cursor:pointer;
+
+	}
+	#delet{
+		width:330px;
+		height:84px;
+		background: inherit;
+		border:2px solid #41a2fc;
+		font-family: Ubuntu;
+		font-size: 40px;
+		cursor:pointer;
+
+	}
+	#log{
+		width:330px;
+		height:84px;
+		background: inherit;
+		border:2px solid #41a2fc;
+		font-family: Ubuntu;
+		font-size: 40px;
+		cursor:pointer;
+
+	}
+#delet-company,#log_out{
+	margin-top: 20px;
+}
+	#model{
+		width:75%;
+		background:url("images/company.jpg");
+		background-size:cover;
+		background-repeat:no-repeat;
+		position: absolute;
+		z-index: 1000;
+		top:105px;
+		display: none;
+		height:0px;
+		box-shadow:0px 8px 16px #ddd;
+
+	}
+
+	#form{
+		float:left;
+		width:100%;
+		height:100%;
+		background:rgba(0,0,0,0.8);
+		padding:20px;
+		overflow-y:scroll;
+	}
+
+	#model input,textarea,select{
+		width:98%;
+		border:none;
+		padding:15px;
+		margin-bottom:25px;
+		box-shadow:0px 0px 8px red;
+		box-sizing: border-box;
+	}
+
+	/* start model scroll bar */
+
+	#form::-webkit-scrollbar-track
+	{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+
+	}
+
+	#form::-webkit-scrollbar
+	{
+	width: 10px;
+	background-color: #F5F5F5;
+	}
+
+	#form::-webkit-scrollbar-thumb
+	{
+	background-color: #FF7466;
+
+	}
+
+
+@media only screen and (max-width: 600px)
+{
+#company-option{
+		width:100%;
+		padding:20px;
+		margin:-50px 0px;
+		position: relative;
+	}
+	body{
+		overflow-x: hidden;
+	}
+	#create{
+		width:280px;
+		height:100px;
+		background: inherit;
+		border:2px solid #41a2fc;
+		font-family: Ubuntu;
+		font-size: 40px;
+		cursor:pointer;
+
+	}
+	#delet{
+		width:280px;
+		height:100px;
+		background: inherit;
+		border:2px solid #41a2fc;
+		font-family: Ubuntu;
+		font-size: 40px;
+		cursor:pointer;
+
+	}
+	#log{
+		width:280px;
+		height:100px;
+		background: inherit;
+		border:2px solid #41a2fc;
+		font-family: Ubuntu;
+		font-size: 40px;
+		cursor:pointer;
+
+	}
+}

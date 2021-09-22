@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fascinate+Inline">
+</head>
+<body>
+	<!-----------------first div coding start-------------------------->
+<div id="body">
+	<div id="first_profile">
+		<img src="../images/logo.png" id="logo_img">
+		<h1  id="api-name">SAFE_DOC</h1>
+		<div id="profile_img">
+			<i class="fa fa-upload" id="upload_fafa">Upload image</i>
+			<input type="file" accept="image/*" id="inp_file" onchange="upload_pic()">
+		</div>
+		<h1 id="user_name"></h1>
+		<i class="fa fa-forward" style="color: #FF7466; position: absolute;top: 130px;left: 560px;font-size: 30px;cursor: pointer;display: none;" id="next"></i>
+	</div>
+</div>
+	<!----------------------------------------------------------first div coding end------------------------------------------>
+
+	<!------------------------------------second div coding start------------------------------------>
+<div id="main_profile_page_of_user">
+	<header>
+		<h1 id="profile_name"></h1>
+		<div id="profile_photo"></div>
+	</header>
+	<section>
+		<div id="navbar">
+			<div id="navitem"><a href="pages/business.html"><i class="fa fa-briefcase" id="menu_icon"></i><br>Bussiness</a></div>
+			<div id="navitem"><a href="#"><i class="fa fa-pencil" id="menu_icon"></i><br>About Me</a></div>
+			<div id="navitem"><a href="pages/contacts.html"><i class="fa fa-phone" id="menu_icon"></i><br>Contacts</a></div>
+			<div id="navitem"><a href="pages/playlist.html"><i class="fa fa-play" id="menu_icon"></i><br>Playlist</a></div>
+			<div id="navitem"><a href="#" onclick="logout()"><i class="fa fa-sign-out" id="menu_icon"></i><br>Logout</a></div>
+		</div>
+		<h1 id="wait_for_logout">Please wait . . . . . </h1>
+	</section>
+	<footer>
+		<img src="../images/logo.png" id="footer_logo"><h2  id="api-name-footer">SAFE_DOC</h2>
+</div>
+	<!-------------------------------------second div coding end-------------------------------------->
+<script src="welcome_up.js.js"></script>
+</body>
+</html>

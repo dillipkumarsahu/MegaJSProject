@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="../style/voucher.css">
+	<link rel="stylesheet" href="../style/sales_voucher.css">
+	<link rel="stylesheet" href="../style/animate.css">
+	<link href="https://fonts.googleapis.com/css?family=Fascinate+Inline|Ubuntu" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Homepage</title>
+	<noscript>
+		<h1>Please enable JavaScript</h1>
+		<style>
+		body{
+			background:black;
+			}
+
+			h1{
+			font-size: 100px;
+			text-align:center;
+			color:white;
+			font-family:sans-serif;
+			}
+
+		#webpage{display:none;}
+		</style>
+	</noscript>
+
+</head>
+<body>
+<div id="webpage">
+				<header class = "remove">
+				<img src="../../../../images/triangle.png" width="130">
+				<div id="pic-box"></div>
+				</header>
+	<div id="voucher-page" class="remove">
+		<button id="tabs" name="purchase">
+			<p>Purchase voucher <sup style="font-size: 15px">(alt + p)</sup></p> 
+		</button>
+
+		<button id="tabs" name="sales">
+			<p>Sales voucher <sup style="font-size: 15px">(alt + s)</sup></p>
+		</button>
+	</div>
+		<div id="tab-contents">
+
+			<!--purchase coding-->
+			<div id="purchase" class="open">
+				<table border="1" width="100%" height="50" style="font-family: 'Ubuntu',sans-serif;" class="remove">
+					<tr>
+						<td style="width: 85%;"><input type="number" id="search-store-voucher" placeholder="Enter voucher no. than press enter to search" /></td>
+						<td style="width: 15%;"><button style="width: 100%;height: 100%;border: none;background-color: white;font-family: 'Ubuntu',sans-serif;font-size: 20px;cursor: pointer;color: red;" title="Delete searched voucher" id="delete-voucher"><i class="fa fa-trash"></i> &nbspDelete</button></td>
+					</tr>
+				</table>
+				<table border="1" width="100%" height="120">
+					<tr>
+						<td style="width: 85%;position: relative;">
+							<h1 style="font-family: 'Ubuntu',sans-serif;padding: 0;margin: 0;position: absolute;top: 10px;left: 10px;font-size: 60px;" id="cmp-name"></h1>
+							<address id="address" style="position: absolute;top: 75px;left: 15px;font-family: sans-serif;font-weight: bold;"></address>
+						</td>
+						<td style="width: 15%;"><img style="width: 130px;height: 120px;margin-left: 5px;" id="cmp-logo"></td>
+					</tr>
+				</table>
+				<table border="1" style="width: 100%;height: 70px;font-family: 'Ubuntu',sans-serif;text-align: center;">
+					<tr>
+						<td style="width: 22%;" class="background"><b>Purchase no :</b></td>
+						<td style="width: 35%;"> <b style="float: left;" id="p-voucher-no"></b></td>
+						<td style="width: 25%;" class="background"><b>Date :</b></td>
+						<td style="width: 18%;" id="purchase-date"></td>
+					</tr>
+					<tr>
+						<td style="width: 22%;" class="background"><b>Party a/c name :</b></td>
+						<td style="width: 35%;position: relative;"><input type="text" id="search-paccount"/> <span id="search-message" class="remove"> After fill press Enter</span></td>
+						<td style="width: 25%;" class="background"><b>Current balance :</b></td>
+						<td style="width: 18%;" id="balance-Cr"></td>
+					</tr>
+				</table>
+
+
+				<table width="100%" border="1" id="item-table" style="position: relative; top: 20px;font-family:'Ubuntu',calibri;font-weight: bold;">
+					<tr style="height: 35px;text-align: center;" class="background">
+						<td style="width: 35%">Item</td>
+						<td style="width: 10%">Quantity</td>
+						<td style="width: 10%">Rate</td>
+						<td style="width: 10%">Sp</td>
+						<td style="width: 8%">Per</td>
+						<td style="width: 21%">Amount</td>
+						<td style="width: 6%">Delete</td>
+					</tr>
+				</table>
+				<button class="remove" disabled="disabled" id="add-item-btn" style="background-color: white;border: 2px solid black;padding: 5px;width: 170px;cursor: pointer;position: relative;top: 30px;left: 0px;font-size: 17px"><b><i class="fa fa-plus-square" style=""></i> Add Item <sup style="font-size: 10px;">(alt + a)</sup></b></button>
+
+				<div id="ledger-name-hint" class="remove"></div>
+				<table border="1" width="100%" style="margin-top: 50px;height: 440px;">
+					<tr height="10%">
+						<td rowspan="5" width="60%" style="padding: 15px;position: relative;">
+
+							<fieldset style="height: 200px;width: 95%;border: 2px solid black;position: absolute;top:2%;left: 2.5%;right: 2.5%; border-radius: 10px;" id="supplier-field">
+								<legend style="font-family: 'Ubuntu',sans-serif;font-weight: bold;">Supplier details</legend>
+
+									<input type="text" placeholder="Name of the Supplier" id="supplier-name"/>
+									<input type="number" placeholder="Supplier phone no" id="supplier-no"/>
+									<input type="text" placeholder="Supplier address" id="supplier-address"/>
+
+							</fieldset>
+
+
+							<fieldset style="height: 170px;width: 95%;border: 2px solid black;position: absolute;bottom: 0;left: 2.5%;right: 2.5%;bottom: 2%;border-radius: 10px;" class="remove">
+								<legend style="font-family: 'Ubuntu',sans-serif;font-weight: bold;" id="tax-notice">Tax setup</legend>
+								<form id="tax-form" autocomplete="off">
+									<input type="text" required="required" placeholder="Tax name" id="tax-name"/>
+									<input type="text" required="required" placeholder="ex- 2%" id="tax"/>
+									<input type="submit" value="Set" style="cursor: pointer;border: 1px solid #ccc;background-color: red;color: white;" />
+								</form>
+							</fieldset>
+						</td>
+						<td width="20%" style="font-family: 'Ubuntu',sans-serif;text-align: right;font-weight: bold;">Subtotal :</td>
+						<td width="20%" style="font-family: 'Ubuntu',sans-serif;text-align: left;" id="subtotal"> <i class="fa fa-rupee"></i> 00.00</td>
+					</tr>
+					<tr height="60%">
+						<td width="20%" style="font-family: 'Ubuntu',sans-serif;text-align: right;font-weight: bold;" id="display-tax-name"></td>
+						<td width="20%" style="font-family: 'Ubuntu',sans-serif;text-align: left;" id="display-tax"></td>
+					</tr>
+					<tr height="10%">
+						<td width="20%" style="font-family: 'Ubuntu',sans-serif;text-align: right;font-weight: bold;">Total :</td>
+						<td width="20%" style="font-family: 'Ubuntu',sans-serif;text-align: left;" id="total"> <i class="fa fa-rupee"></i> 00.00</td>
+					</tr>
+					<tr height="10%">
+						<td width="20%" style="font-family: 'Ubuntu',sans-serif;text-align: right;font-weight: bold;">Paid :</td>
+						<td width="20%" style="font-family: 'Ubuntu',sans-serif;text-align: left;"> <i class="fa fa-rupee"></i> <input type="number" id="paid" placeholder="00.00"/></td>
+					</tr>
+					<tr height="10%">
+						<td width="20%" style="font-family: 'Ubuntu',sans-serif;text-align: right;font-weight: bold;">Balance dues :</td>
+						<td width="20%" style="font-family: 'Ubuntu',sans-serif;text-align: left;" id="balance-dues"> <i class="fa fa-rupee"></i> 00.00</td>
+					</tr>
+					<tr id="hide" style="display: none;">
+						<td style="width: 70%;border: none;"><p style="padding: 0;margin: 0;font-family: sans-serif;font-weight: bold;font-size: 16px;color: green;margin-left: 10px;" id="print-notice">To print this voucher press (ctrl+p)</p></td>
+						<td><button id="store-data">SAVE</button></td>
+					</tr>
+				</table>
+			</div>
+			<!--sales coding-->
+			<div id="sales" class="open">
+				<table border="1" width="100%" height="50" style="font-family: 'Ubuntu',sans-serif;" class="remove">
+					<tr>
+						<td style="width: 85%;"><input type="number" id="search-sales-voucher" placeholder="Enter voucher no. than press enter to search" /></td>
+						<td style="width: 15%;"><button style="width: 100%;height: 100%;border: none;background-color: white;font-family: 'Ubuntu',sans-serif;font-size: 20px;cursor: pointer;color: red;" title="Delete searched voucher" id="delete-sales-voucher"><i class="fa fa-trash"></i> &nbspDelete</button></td>
+					</tr>
+				</table>
+				<table border="1" width="100%" height="120">
+					<tr>
+						<td style="width: 85%;position: relative;">
+							<h1 style="font-family: 'Ubuntu',sans-serif;padding: 0;margin: 0;position: absolute;top: 10px;left: 10px;font-size: 60px;" id="sales-cmp-name"></h1>
+							<address id="sales-address" style="position: absolute;top: 75px;left: 15px;font-family: sans-serif;font-weight: bold;"></address>
+						</td>
+						<td style="width: 15%;"><img style="width: 130px;height: 120px;margin-left: 5px;" id="sales-cmp-logo"></td>
+					</tr>
+				</table>
+				<table border="1" style="width: 100%;height: 70px;font-family: 'Ubuntu',sans-serif;text-align: center;">
+					<tr>
+						<td style="width: 22%;" class="background"><b>Sales no :</b></td>
+						<td style="width: 41%;"> <b style="float: left;" id="s-voucher-no"></b></td>
+						<td style="width: 21%;" class="background"><b>Date :</b></td>
+						<td style="width: 15%;" id="sales-date"></td>
+					</tr>
+					<tr>
+						<td style="width: 22%;" class="background"><b>A/c name :</b></td>
+						<td style="width: 41%;position: relative;"><input type="text" id="enter-saccount"/><span class="remove" id="ac-sales-message" style="font-family: calibri;color: red;">(After fill press enter)</span></td>
+						<td style="width: 21%;" class="background"><b>Current balance :</b></td>
+						<td style="width: 15%;" id="balance-Cr"></td>
+					</tr>
+				</table>
+				<table width="100%" border="1" height="120">
+					<tr style="height: 35px;">
+						<td width="22%" class="background" style="text-align: center;font-family: 'Ubuntu',sans-serif;">Customer name : </td>
+						<td width="78%"><input type="text" disabled="disabled" id="customer-name"></td>
+					</tr>
+					<tr style="height: 35px;">
+						<td width="22%" class="background" style="text-align: center;font-family: 'Ubuntu',sans-serif;">Mobile number : </td>
+						<td width="78%"><input type="number" disabled="disabled" id="customer-no"></td>
+					</tr>
+					<tr style="height: 50px;">
+						<td width="22%" class="background" style="text-align: center;font-family: 'Ubuntu',sans-serif;">Address : </td>
+						<td width="78%"><textarea disabled="disabled" id="customer-address"></textarea></td>
+					</tr>
+				</table>
+				<table width="100%" border="1" id="sales-item-table" style="position: relative; top: 20px;font-family:'Ubuntu',calibri;font-weight: bold;">
+					<tr style="height: 35px;text-align: center;" class="background">
+						<td style="width: 35%">Item</td>
+						<td style="width: 15%">Quantity</td>
+						<td style="width: 15%">Rate</td>
+						<td style="width: 8%">Per</td>
+						<td style="width: 21%">Amount</td>
+						<td style="width: 6%">Delete</td>
+					</tr>
+				</table>
+				<button class="remove" id="add-sales-item-btn" style="background-color: white;border: 2px solid black;padding: 5px;width: 170px;cursor: pointer;position: relative;top: 30px;left: 0px;font-size: 17px" disabled="disabled"><b><i class="fa fa-plus-square"></i> Add Item <sup style="font-size: 10px;">(alt + a)</sup></b></button>
+				<div id="ledger-sales-name-hint" class="remove"></div>
+		<table border="1" width="100%" style="margin-top: 50px;height: 280px;">
+					<tr height="10%">
+						<td rowspan="5" width="60%" style="padding: 15px;position: relative;">
+
+							<fieldset style="height: 170px;width: 95%;border: 2px solid black;position: absolute;bottom: 0;left: 2.5%;right: 2.5%;bottom: 2%;border-radius: 10px;" class="remove">
+								<legend style="font-family: 'Ubuntu',sans-serif;font-weight: bold;" id="sales-tax-notice">Tax setup</legend>
+								<form id="sales-tax-form" autocomplete="off">
+									<input type="text" required="required" placeholder="Tax name" id="sales-tax-name"/>
+									<input type="text" required="required" placeholder="ex- 2%" id="sales-tax"/>
+									<input type="submit" value="Set" style="cursor: pointer;border: 1px solid #ccc;background-color: red;color: white;" />
+								</form>
+							</fieldset>
+						</td>
+						<td width="20%" style="font-family: 'Ubuntu',sans-serif;text-align: right;font-weight: bold;">Subtotal :</td>
+						<td width="20%" style="font-family: 'Ubuntu',sans-serif;text-align: left;" id="sales-subtotal"> <i class="fa fa-rupee"></i> 00.00</td>
+					</tr>
+					<tr height="60%">
+						<td width="20%" style="font-family: 'Ubuntu',sans-serif;text-align: right;font-weight: bold;" id="sales-display-tax-name"></td>
+						<td width="20%" style="font-family: 'Ubuntu',sans-serif;text-align: left;" id="sales-display-tax"></td>
+					</tr>
+					<tr height="10%">
+						<td width="20%" style="font-family: 'Ubuntu',sans-serif;text-align: right;font-weight: bold;">Total :</td>
+						<td width="20%" style="font-family: 'Ubuntu',sans-serif;text-align: left;" id="sales-total"> <i class="fa fa-rupee"></i> 00.00</td>
+					</tr>
+					<tr height="10%">
+						<td width="20%" style="font-family: 'Ubuntu',sans-serif;text-align: right;font-weight: bold;">Paid :</td>
+						<td width="20%" style="font-family: 'Ubuntu',sans-serif;text-align: left;"> <i class="fa fa-rupee"></i> <input type="number" id="sales-paid" placeholder="00.00"/></td>
+					</tr>
+					<tr height="10%">
+						<td width="20%" style="font-family: 'Ubuntu',sans-serif;text-align: right;font-weight: bold;">Balance dues :</td>
+						<td width="20%" style="font-family: 'Ubuntu',sans-serif;text-align: left;" id="sales-balance-dues"> <i class="fa fa-rupee"></i> 00.00</td>
+					</tr>
+					<tr id="sales-hide" style="display: none;">
+						<td style="width: 70%;border: none;"><p style="padding: 0;margin: 0;font-family: sans-serif;font-weight: bold;font-size: 16px;color: green;margin-left: 10px;" id="sales-print-notice">To print this voucher press (ctrl+p)</p></td>
+						<td><button id="sales-store-data">SAVE</button></td>
+					</tr>
+		</table>
+			</div>
+		</div>
+	
+
+</div>
+<script src="../script/accounts_with_inventry/voucher.js"></script>
+<script src="../script/accounts_with_inventry/purchase_voucher.js"></script>
+<script src="../script/accounts_with_inventry/sales_voucher.js"></script>
+</body>
+</html>

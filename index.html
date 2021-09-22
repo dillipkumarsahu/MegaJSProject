@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<meta lang="en-US">
+<meta charset="utf-8">
+	<link rel="stylesheet" href="style/style.css">
+	<link rel="stylesheet" href="style/animate.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fascinate+Inline">
+<head>
+<title>
+	API
+</title>
+<noscript>
+		<h1 style="font-family: sans-serif;font-size: 50px;">Please enable javascript..</h1>
+		<style>
+			body{
+			background-color:black;
+			color:white;
+			text-align: center;
+			}
+			#webpage{
+				display: none;
+			}
+		</style>
+	</noscript>
+</head>
+<body>
+	<div id="webpage">
+	<div id="main_cont">
+		<img src="images/logo.png" width="130" height="140" id="logo">
+		<h1 id="api-name">SAFE_DOC</h1>
+		<i class="fa fa-play-circle-o animated infinite swing" style="font-size: 50px;padding: 5px;cursor: pointer;margin-left: 45%;" id="open_box"></i>
+	</div>
+	<div id="form_box">
+		<i class="fa fa-close" style="color: white;background-color: black;padding: 4px;float: right;margin: 20px;cursor: pointer;" id="close_box"></i>
+		<h1 align="center" style="color:white;padding: 0;margin: 0;position: relative;top: 50px;left: 30px">Login User !</h1>
+		<form autocomplete="off" onsubmit="return login()">
+		<input type="text" name="username" id="username" placeholder="&#xf2bd; username">
+		<span id="user_notfound"></span>
+		<input type="password" name="password" id="password" placeholder="&#xf023; Password">
+		<span id="password_wrong"></span>
+		<input type="submit" value="Login" id="log_btn">
+		</form>
+
+		<h1 align="center" style="color:white;padding: 0;margin: 0;position: relative;top: 50px;left: 5px">Signup User !</h1>
+		<form autocomplete="off" onsubmit="return signup()">
+		<input type="text" name="name" id="name" placeholder="&#xf2bd; username">
+		<input type="email" name="email" id="email" placeholder="&#xf0e0; Email Id" onchange="return userexist()">
+		<span id="existspan"></span>
+		<input type="password" name="password" id="sign_pass"  placeholder="&#xf023; Password">
+		<input type="number" name="mobile" id="number"  placeholder="&#xf10b; Mobile no">
+		<span id="signup_success"></span>
+		<input type="submit" value="Sign Up" id="sign_btn">
+		</form>
+	</div>
+</div>
+	<script src="script/script.js"></script>
+	<script src="script/compatible.js"></script>
+	<script src="script/login_and_signup.js"></script>
+</body>
+</html>

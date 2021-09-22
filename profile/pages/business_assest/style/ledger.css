@@ -1,0 +1,262 @@
+@charset "utf-8";
+
+	*{
+		box-sizing: border-box;
+	}
+	
+	body{
+		padding:0;
+		margin:0;
+		overflow: hidden;
+	}
+
+	header{
+		position: fixed;
+		top:0;
+		left:0;
+	}
+	
+	#pic-box{
+	width:100px;
+	height:100px;
+	border:2px solid white;
+	background-color:white;
+	box-shadow:0px 0px 5px grey;
+	position: fixed;
+	border-radius:50%;
+	left:10px;
+	top:10px;
+	}
+
+	#app-name{
+		font-family:"Ubuntu",sans-serif;
+		font-size:35px;
+		
+	}
+
+	#tag-line{
+		font-size:20px;
+		text-align:center;
+		font-family:cursive;
+		margin-top:-20px;
+	}
+
+	#app-box fieldset{
+		border:2px solid blue;
+		position: relative;
+		width:80%;
+		left:10%;
+		right:10%;
+		top:50px;
+		padding-left:20px;
+		box-shadow:0px 8px 16px 0px rgba(0,0,0,0.2);
+		height:490px;
+	}
+
+	#app-box fieldset legend{
+		width:200px;
+		font-family:"Ubuntu",sans-serif;
+		font-size:20px;
+		font-weight: bold;
+		border-top:2px solid blue;
+		border-left:2px solid blue;
+		border-right:2px solid blue;
+		position: absolute;
+		top:-49px;
+		padding:12px;
+		left:-2px;
+		background: white;
+		border-top-left-radius:5px;
+		border-top-right-radius:5px;
+		text-indent:10px;
+	}
+
+	#tab-list{
+		width:15%;
+		float:left;
+		margin-top:20px;
+	}
+
+	#tab-list button{
+		border:1px solid #d4d4d4;
+		background:white;		
+		font-weight:bold;
+		font-family: "Ubuntu",sans-serif;
+		padding:12px;
+		width:80%;
+		float:left;
+		margin-bottom: 30px;
+		font-size:18px;
+		border-radius: 2px
+
+	}
+
+	#tab-content{
+		width:85%;
+		height:250px;
+		float:left;
+		padding:20px;	
+	}
+
+	#tab-content>*{
+		display: none
+	}
+
+	#tab-list button.active{
+		background:blue;
+		color:white;
+	}
+
+	.open {
+  		animation: fade 1s;
+	}
+
+	@keyframes fade{
+ 		 	0% {opacity: 0;}
+  			100% {opacity: 1;}
+	}
+
+	#create form input,#create form select{
+		padding:12px;
+		border:1px solid #d4d4d4;
+		margin-bottom: 12px;
+		width:250px;
+		margin-top:8px;
+	}
+
+	#create form{
+		font-family:"Ubuntu",sans-serif;
+	}
+
+
+	td,textarea{
+		border:1px solid #d4d4d4;
+		padding:10px;
+	}
+
+	textarea{
+		margin-top:8px;
+		margin-bottom:8px;
+		width:100%;
+	}
+
+	#cmp-logo{
+		float:left;	
+		box-shadow: 0px 0px 15px black;
+		width:150px;
+		height:150px;
+		border-radius:50%;
+		color: white;
+		margin-top:25px;
+	}
+
+	#cmp-name{
+		width:200px;
+		height:50px;
+		position: absolute;
+		bottom:-2px;
+		background-image:url("../../../../images/cmp_name_opp.png");
+		background-repeat: no-repeat;
+		background-position: bottom center;
+		background-size: 101% 50px;
+		color:white;
+		font-family: "Righteous";
+		font-size:20px;
+		text-align: center;
+		padding-top:12px;
+		left:0;	
+	}
+
+#t_o_b{
+	float: right;
+}
+#dif-text{
+	position: relative;
+	bottom: 0;
+	left: 360px;
+}
+
+/*edit ledger coding*/
+
+#ledger-notice{
+	color: red;
+	position: relative;
+	top: 0px;
+	left: 0px;
+	display: none;
+}
+#hide-one,#hide-two,#hide-three,#hide-four,#hide-five,#hide-six{
+	display: none;
+}
+#save,#delete{
+	margin: 10px 10px;
+	width: 100px;
+	height: 40px;
+	background-color: white;
+	border: 2px solid black;
+	font-weight: bold;
+		display: none;
+		float: left;
+}
+button{
+	cursor: pointer;
+	outline: none;
+}
+/*edit ledger coding ended*/
+
+
+/*start responsive coding*/
+
+@media(max-width: 1024px){
+	#tab-list{
+		width: 40%;
+		margin-left: 30%;
+		margin-right: 30%;
+		float: left;
+	}
+	#tab-list button{
+		width: 33%;
+		border: none;
+	}
+	#cmp-logo{
+		margin-left: 90px;
+		margin-top: -16px;
+		width: 120px;
+		height: 120px;
+	}
+	#cmp-name{
+		top: 190px;
+		left: 300px;
+	}
+	#tab-content{
+		width: 100%;
+		margin-top: 20px;
+		height: auto;
+	}
+	#app-box fieldset{
+		height: auto;
+	}
+	#description{
+		width: 80%;
+		float: right;
+	}
+}
+@media(max-width: 768px){
+	#cmp-logo{
+		margin-left:77px;
+	}
+	#cmp-name{
+		margin-left: -70px;
+	}
+		#description{
+		width: 80%;
+		float: right;
+	}
+}
+@media(max-width: 480px){
+	#app-box fieldset{
+		width: 100%;
+	}
+}
+
+//*end responsive coding*/

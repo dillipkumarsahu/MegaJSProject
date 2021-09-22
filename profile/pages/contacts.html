@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="style/contact_style.css">
+	<meta lang="en-US">
+	<meta charset="utf-8">
+	<title>contact</title>
+<style>
+	body{padding: 0;margin: 0;overflow: hidden;}
+#profile_photo{width: 100px;height: 100px;border-radius: 50%;box-shadow: 0px 0px 5px gray;position: relative;top: -120px;left: 30px;border:2px solid white;}
+#cont_head{padding: 0;margin: 0;font-family: sans-serif;font-size: 50px;position: relative;top: -210px;left: 520px;color:#00aaff;}
+#cont_box{width: 360px;height: 300px;border-left:2px solid #FF7466;border-bottom:4px solid #FF7466;position: relative;top: -180px;left: 520px;}
+#full_name,#first_num,#second_num{width: 330px;height: 40px;margin-left: 30px;margin-top: 30px;padding: 5px;box-sizing: border-box;border:none;border-left: 5px solid #00aaff;box-shadow: 0px 0px 3px gray}
+#save_btn{width: 90px;height: 40px;background-color: yellow;border:1px solid #ccc;margin-top: 30px;margin-left: 270px;cursor: pointer;}
+.cont_list{width: 340px;height: 662px;background-color: black;position: fixed;z-index: 1000;top: 0px;left: 1030px;overflow: scroll;overflow-x: hidden;color: white;box-shadow: 0px 0px 7px gray;padding: 20px;box-sizing: border-box;}
+.cont_list::-webkit-scrollbar{width: 12px;}
+.cont_list::-webkit-scrollbar-track{background-color: #FF7466;}
+.cont_list::-webkit-scrollbar-thumb{background-color: #00aaff;}
+span{color: red;font-family: sans-serif;font-size: 40px;position: relative;top: 15px;left: 20px;}
+#search_box{width: 270px;height: 40px;padding: 5px;box-sizing: border-box;margin-left: 10px;margin-top: 30px;}
+fieldset{border:none;border-top:1px solid white;margin-top: 20px;height: 80px;}
+legend{font-family: calibri;font-size: 30px;color: yellow;font-weight: bold;}
+#delet_icon{float: right;font-size: 17px;position: relative;top: -15px;left: 15px;cursor: pointer;color: yellow;margin-right: 15px;}
+li{margin-top: 7px;font-family: cursive;font-size: 12px;}
+#saved{font-size: 20px;color: #FF7466;position: relative;z-index: 1000;top: 30px;left: 60px;display: none;}
+</style>
+</head>
+<body>
+	<header>
+		<img src="images/triangle.png">
+		<div id="profile_photo"></div>
+	</header>
+	<h1 id="cont_head">Private Contacts</h1>
+	<div id="cont_box">
+		<form id="add_form">
+		<input type="text" id="full_name" placeholder="Enter name here" />
+		<input type="number" id="first_num" placeholder="First number" />
+		<input type="number" id="second_num" placeholder="Second number"/>
+		<span id="saved">Successfully saved !</span>
+		<input type="button" value="Add" id="save_btn" onclick="save_cont()" />
+		</form>
+	</div>
+
+		<i class="fa fa-plus-circle" style="font-size: 50px;color: #FF7466;position: relative;z-index: 100;top: -500px;left: 500px;background-color: white;cursor: pointer;" title="See your contracts" onclick="plus()"></i>
+		<div class="cont_list" id="cont_listbox">
+			<i class="fa fa-close" style="color: white;background-color: black;padding: 4px;float:left;cursor: pointer;background-color: #FF7466;" id="close_box" onclick="minus()"></i>
+			<span id="c_list">Contacts list</span>
+			<form autocomplete="off">
+			<input type="search" id="search_box" placeholder="Search your contracts name" oninput="search_contact(this)" />
+			</form>
+			<div id="container">
+			
+			</div>
+		
+		</div>
+		<div id="logout_restore_btn">
+			<span style="color: black;font-size: 17px;font-family: sans-serif;font-weight: bold;float: left;cursor: pointer;" onclick="logout()"><i class="fa fa-sign-out"></i>Logout</span>
+			<span style="color: black;font-size: 16px;font-family: sans-serif;font-weight: bold;float: right;margin-right: 30px;cursor: pointer;" onclick="open_restore_box()"><i class="fa fa-refresh"></i> Restore Contacts</span>
+		</div>	
+		<div id="restore_data_box">
+			<h1 id="restore_notice"></h1>
+			<i class="fa fa-close" style="color: white;float:right;cursor: pointer;background-color: red;border-radius: 50%;padding: 5px;position: relative;top: -50px;right: 26px;" id="close_box" onclick="this.parentElement.style.height='0'"></i>
+			<table width="80%" align="center" id="restore_table">
+				<tr>
+					<th>Contacts Name</th>
+					<th>First number</th>
+					<th>Second number</th>
+					<th>Restore now</th>
+				</tr>
+			</table>
+		</div>
+<script src="script/contacts_script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,96 @@
+@charset "utf-8";
+
+*{box-sizing: border-box}
+body{
+	padding:0;
+	margin:0;
+	overflow:hidden;
+}
+
+#main_cont{
+	width: 100%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+#logo{
+	border: 1px solid #ccc;
+	box-shadow: 0px 1px 2px gray;
+	margin-left: 42%;
+}
+#api-name{
+	padding: 0;
+	margin: 0;
+	font-family:'Fascinate Inline',cursive;
+	font-size: 50px;
+	color: #FF7466;
+	margin-left: 38%;
+}
+#form_box{
+	position: relative;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	width: 320px;
+	height: 100vh;
+	background-color:  #FF7466;
+	box-shadow: 0px 1px 5px gray;
+	overflow: hidden;
+}
+#username,#password,#name,#email,#sign_pass,#number{
+	margin-left: 20px;
+	width: 280px;
+	height: 40px;
+	font-size: 16px;
+	padding: 10px;
+	outline:none;
+	border: 1px solid white;
+}#username{margin-top: 50px;}#password{margin-top: 30px;}
+#name{margin-top: 80px;}#email{margin-top: 25px;}#sign_pass{margin-top: 25px;}#number{margin-top: 25px;}
+#log_btn,#sign_btn{
+	width: 70px;
+	height: 35px;
+	margin-top: 20px;
+	margin-left: 230px;
+	outline:none;
+	border: 1px solid white;
+	background-color: white;
+	cursor: pointer;
+}
+#login-form input[type='text'],[type='password']{
+	font-family: fontAwesome;
+	font-size: 18px;
+	color: grey;
+}
+#signup-form input[type='text'],[type='password'],[type='email'],[type='number']{
+	font-family: fontAwesome;
+	font-size: 18px;
+	color: grey;
+}
+.pull{
+	animation:ope 0.2s;
+	animation-fill-mode: forwards;
+}
+@keyframes ope{
+	0%{width: 0px;}
+	100%{width: 320px;}
+}
+
+.push{
+	animation:clo 0.2s;
+	animation-fill-mode: forwards;
+}
+@keyframes clo{
+	0%{width: 320px;}
+	100%{width: 0px;}
+}
+span{
+	position: relative;
+	top: 20px;
+	left: 30px;
+	z-index: +1000;
+	color: white;
+	font-family: sans-serif;
+	font-weight: bold;
+}
